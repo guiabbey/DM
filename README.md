@@ -13,10 +13,10 @@
 ### 调参一个耗费时间的过程，XGBoost的auc0.8337,随机森林的auc0.8454，SVC的auc0.7586,决策树的auc0.7744,逻辑回归的auc0.6924.事实上，随机森林只调了n_estimators，可能出现了过拟合。
 ## 任务五：模型融合，模型融合方式任意，并结合Task5给出你的最优结果。例如Stacking融合，用你目前评分最高的模型作为基准模型，和其他模型进行stacking融合，得到最终模型及评分结果。
 
- ### StackingClassifier(classifiers, meta_classifier, use_probas=False, drop_last_proba=False, average_probas=False, verbose=0, use_features_in_secondary=False, store_train_meta_features=False, use_clones=True)
- ### classifiers : 基分类器，数组形式，[cl1, cl2, cl3]. 每个基分类器的属性被存储在类属性 self.clfs_.
-### meta_classifier : 目标分类器，即将前面分类器合起来的分类器
-### use_probas : bool (default: False) ，如果设置为True， 那么目标分类器的输入就是前面分类输出的类别概率值而不是类别标签
-### average_probas : bool (default: False)，用来设置上一个参数当使用概率值输出的时候是否使用平均值。
-### verbose : int, optional (default=0)。用来控制使用过程中的日志输出，当 verbose = 0时，什么也不输出， verbose = 1，输出回归器的序号和名字。verbose = 2，输出详细的参数信息。verbose > 2, 自动将verbose设置为小于2的，verbose -2.
-### use_features_in_secondary : bool (default: False). 如果设置为True，那么最终的目标分类器就被基分类器产生的数据和最初的数据集同时训练。如果设置为False，最终的分类器只会使用基分类器产生的数据训练。
+ ### 1、StackingClassifier(classifiers, meta_classifier, use_probas=False, drop_last_proba=False, average_probas=False, verbose=0, use_features_in_secondary=False, store_train_meta_features=False, use_clones=True)
+ ### 2、classifiers : 基分类器，数组形式，[cl1, cl2, cl3]. 每个基分类器的属性被存储在类属性 self.clfs_.
+### 3、meta_classifier : 目标分类器，即将前面分类器合起来的分类器
+### 4、use_probas : bool (default: False) ，如果设置为True， 那么目标分类器的输入就是前面分类输出的类别概率值而不是类别标签
+### 5、average_probas : bool (default: False)，用来设置上一个参数当使用概率值输出的时候是否使用平均值。
+### 6、verbose : int, optional (default=0)。用来控制使用过程中的日志输出，当 verbose = 0时，什么也不输出， verbose = 1，输出回归器的序号和名字。verbose = 2，输出详细的参数信息。verbose > 2, 自动将verbose设置为小于2的，verbose -2.
+### 7、use_features_in_secondary : bool (default: False). 如果设置为True，那么最终的目标分类器就被基分类器产生的数据和最初的数据集同时训练。如果设置为False，最终的分类器只会使用基分类器产生的数据训练。
