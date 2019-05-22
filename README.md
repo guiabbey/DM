@@ -11,7 +11,7 @@
 ## 任务四：记录5个模型（逻辑回归、SVM、决策树、随机森林、XGBoost）关于accuracy、precision，recall和F1-score、auc值的评分表格，并画出ROC曲线。
 ## 任务五：使用网格搜索法对5个模型进行调优（调参时采用五折交叉验证的方式），并进行模型评估，记得展示代码的运行结果。
 ### 调参一个耗费时间的过程，XGBoost的auc0.8337,随机森林的auc0.8454，SVC的auc0.7586,决策树的auc0.7744,逻辑回归的auc0.6924.事实上，随机森林只调了n_estimators，可能出现了过拟合。
-## 任务五：模型融合，模型融合方式任意，并结合Task5给出你的最优结果。例如Stacking融合，用你目前评分最高的模型作为基准模型，和其他模型进行stacking融合，得到最终模型及评分结果。
+## 任务五：模型融合，模型融合方式任意，并结合Task5给出你的最优结果。例如Stacking融合，用你目前评分最高的模型作为基准模型，和其他模型进行stacking融合，得到最终模型及评分结果。最终结果确实提高了，分别为准确率:0.8453,精确率:0.8592,召回率:0.8287,f1-score:0.8437,auc:0.8454
 
  ### 1、StackingClassifier(classifiers, meta_classifier, use_probas=False, drop_last_proba=False, average_probas=False, verbose=0, use_features_in_secondary=False, store_train_meta_features=False, use_clones=True)
  ### 2、classifiers : 基分类器，数组形式，[cl1, cl2, cl3]. 每个基分类器的属性被存储在类属性 self.clfs_.
